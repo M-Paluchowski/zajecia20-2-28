@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<a th:each="category: ${T(com.example.demo.excercises.model.Category).values()}"
+   th:text="|${category} |" th:href="|/?category=${category}|"></a>
+
+<ul>
+    <li th:each="movie : ${movies}">
+        <a th:href="|/movie?id=${movie.id}|" th:text="${movie.title}"></a>
+    </li>
+</ul>
+
+<form method="post" th:action="@{/movie/add}" th:object="${movie}">
+    Tytuł: <input type="text" th:field="*{title}"><br/>
+    Data premiery: <input type="date" th:field="*{premiereDate}"><br/>
+    Opis: <textarea placeholder="Opis" th:field="*{description}"></textarea><br/>
+    Gatunek filmu: <select th:field="*{category}">
+    <option th:each="category: ${T(com.example.demo.excercises.model.Category).values()}"
+            th:text="${category}" th:value="${category}"></option>
+    </select>
+    <input type="submit" value="Dodaj">
+</form>
+</body>
+</html>

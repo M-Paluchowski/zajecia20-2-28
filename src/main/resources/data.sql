@@ -1,0 +1,2 @@
+INSERT INTO movie(title, premiere_date, description, category) VALUES ('Niewnawistna Ósemka', '2016-01-01', 'To jest nienawistna ósemka', 'DRAMA'),
+('Pulp Fiction', '1994-01-01', 'To jest pulp fiction','THRILLER'), ('Od zmierzchu do świtu', '1998-01-01', 'To jest od zmierzchu do świtu', 'HORROR');
